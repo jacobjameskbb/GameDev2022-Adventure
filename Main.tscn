@@ -1,19 +1,75 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://MenuManager.gd" type="Script" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://WorldManager.gd" type="Script" id=3]
 [ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Gummy Walk 3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Gummy Walk 2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Gummy Walk 1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Gumy Bear Right 1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Gummy Bear Right 2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Gummy Bear Right 3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Gummy Bear Left 2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Gummy Bear Left 3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Gumy Bear Left 1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Gummy Down Run 6.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Gummy Down Run 1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Gummy Down Run 4.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Gummy Down Run 5.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Gummy Down Run 3.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Gummy Bear Up Temp.png" type="Texture" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 18 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "default",
+"name": "down_run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "down_standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "left_standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "move_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "move_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "move_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "move_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "right_standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "up_standing",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 40, 55 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -22,12 +78,16 @@ script = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Player" type="KinematicBody2D" parent="WorldManager"]
+position = Vector2( 100, 100 )
 script = ExtResource( 4 )
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="WorldManager/Player"]
+scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
+animation = "up_standing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldManager/Player"]
+position = Vector2( 0, 41 )
 shape = SubResource( 2 )
 
 [node name="MenuManager" type="Node2D" parent="."]
