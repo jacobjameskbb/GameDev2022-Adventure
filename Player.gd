@@ -1,6 +1,7 @@
 extends KinematicBody2D
 var velocity = Vector2()
 var speed = 200
+var is_sprinting = false
 func _ready():
 	pass
 func get_input():
@@ -8,11 +9,17 @@ func get_input():
 	
 	if Input.is_action_pressed("down"):
 		velocity.y += 1
-		$PlayerSprite.animation = "move_down"
+		if is_sprinting:
+			$PlayerSprite.animation = "down_run"
+		else: 
+			$PlayerSprite.animation = "move_down"
 	elif Input.is_action_just_released("down"):
 		$PlayerSprite.animation = "down_standing"
 	elif Input.is_action_pressed("right"):
-		$PlayerSprite.animation = "move_right"
+		if is_sprinting:
+			$PlayerSprite.animation = "move_right"
+		else:
+			$PlayerSprite.animation = "move_right"
 		velocity.x += 1
 	elif Input.is_action_just_released("right"):
 		$PlayerSprite.animation = "right_standing"
@@ -26,10 +33,13 @@ func get_input():
 		$PlayerSprite.animation = "move_up"
 	elif Input.is_action_just_released("up"):
 		$PlayerSprite.animation = "up_standing"
+		
 	if Input.is_action_just_pressed("sprint_shift"):
-		speed += 200
+		speed = 400
+		is_sprinting = true
 	if Input.is_action_just_released("sprint_shift"):
-		speed -= 200
+		speed = 200
+		is_sprinting = false
 	velocity = velocity.normalized() * speed
 	if velocity.length() > 0:
 		$PlayerSprite.play()

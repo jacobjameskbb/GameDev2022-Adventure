@@ -9,4 +9,6 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	pass
+	for node in self.get_children():
+		if node.is_in_group('enemy'):
+			node.target = $Player.position
