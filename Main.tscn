@@ -1,30 +1,31 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://Assets/Floor Tile Gummy 2.png" type="Texture" id=1]
-[ext_resource path="res://Main.gd" type="Script" id=2]
-[ext_resource path="res://WorldManager.gd" type="Script" id=3]
-[ext_resource path="res://Player.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Gummy Walk 3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Gummy Walk 2.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Gummy Walk 1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Gumy Bear Right 1.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Gummy Bear Right 2.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Gummy Bear Right 3.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Gummy Bear Left 2.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Gummy Bear Left 3.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Gumy Bear Left 1.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Gummy Down Run 6.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Gummy Down Run 1.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Gummy Down Run 4.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Gummy Down Run 5.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Gummy Down Run 3.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Gummy Bear Up Temp.png" type="Texture" id=19]
-[ext_resource path="res://worm.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Assets/Floor Tile Gummy 1.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Tiles/grass tile.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/WorldManager.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Gummies/Gummy Walk 3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Gummies/Gummy Walk 2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Gummies/Gummy Walk 1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Gummies/Gumy Bear Right 1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Gummies/Gummy Bear Right 2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Gummies/Gummy Bear Right 3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Gummies/Gummy Bear Left 2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Gummies/Gummy Bear Left 3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Gummies/Gumy Bear Left 1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Gummies/Gummy Down Run 6.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Gummies/Gummy Down Run 1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Gummies/Gummy Down Run 4.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Gummies/Gummy Down Run 5.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Gummies/Gummy Down Run 3.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Tiles/cross path.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/worm.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Tiles/horizontal path tile.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Tiles/vertical path tile.png" type="Texture" id=22]
 
 [sub_resource type="TileSet" id=4]
-0/name = "Floor Tile Gummy 1.png 0"
-0/texture = ExtResource( 21 )
+0/name = "grass tile.png 0"
+0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 64, 64 )
@@ -37,8 +38,8 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-1/name = "Floor Tile Gummy 2.png 1"
-1/texture = ExtResource( 1 )
+1/name = "cross path.png 1"
+1/texture = ExtResource( 19 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 64, 64 )
@@ -51,6 +52,43 @@
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
+2/name = "horizontal path tile.png 2"
+2/texture = ExtResource( 21 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "vertical path tile.png 3"
+3/texture = ExtResource( 22 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[sub_resource type="StreamTexture" id=6]
+load_path = "res://.import/up 1.png-b975005b3ed1f674585b05ff60002964.stex"
+
+[sub_resource type="StreamTexture" id=7]
+load_path = "res://.import/up 2.png-99b2fcc397811bb03d0b4746fe9870e0.stex"
+
+[sub_resource type="StreamTexture" id=8]
+load_path = "res://.import/up 3.png-8bb1abb2d552c059d7018602f79fbe59.stex"
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -84,7 +122,7 @@ animations = [ {
 "name": "move_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "move_up",
 "speed": 5.0
@@ -94,7 +132,7 @@ animations = [ {
 "name": "right_standing",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "up_standing",
 "speed": 5.0
@@ -110,30 +148,34 @@ script = ExtResource( 2 )
 [node name="WorldManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
-[node name="TileMap" type="TileMap" parent="WorldManager"]
+[node name="GroundTilemap" type="TileMap" parent="WorldManager"]
 tile_set = SubResource( 4 )
-collision_layer = 8
-collision_mask = 7
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 0, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 0, 0, 65540, 0, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 131072, 0, 0, 131073, 1, 0, 131074, 0, 0, 131075, 1, 0, 131076, 0, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0 )
+tile_data = PoolIntArray( -131078, -1610612736, 0, -131077, -1610612736, 0, -131076, -1610612736, 0, -131075, -1610612736, 0, -131074, -1610612736, 0, -131073, -1610612736, 0, -196608, -1610612736, 0, -196607, -1610612736, 0, -196606, -1610612734, 0, -196605, -1610612736, 0, -196604, -1610612736, 0, -196603, -1610612736, 0, -196602, -1610612736, 0, -196601, -1610612736, 0, -196600, -1610612736, 0, -196599, -1610612736, 0, -196598, -1610612736, 0, -65542, -1610612736, 0, -65541, -1610612736, 0, -65540, -1610612736, 0, -65539, -1610612736, 0, -65538, -1610612736, 0, -65537, -1610612736, 0, -131072, -1610612736, 0, -131071, -1610612736, 0, -131070, -1610612734, 0, -131069, -1610612736, 0, -131068, -1610612736, 0, -131067, -1610612736, 0, -131066, -1610612736, 0, -131065, -1610612736, 0, -131064, -1610612736, 0, -131063, -1610612736, 0, -131062, -1610612736, 0, -6, -1610612736, 0, -5, -1610612736, 0, -4, -1610612736, 0, -3, -1610612736, 0, -2, -1610612736, 0, -1, -1610612736, 0, -65536, -1610612736, 0, -65535, -1610612736, 0, -65534, -1610612734, 0, -65533, -1610612736, 0, -65532, -1610612736, 0, -65531, -1610612736, 0, -65530, -1610612736, 0, -65529, -1610612736, 0, -65528, -1610612736, 0, -65527, -1610612736, 0, -65526, -1610612736, 0, 65530, -1610612736, 0, 65531, -1610612736, 0, 65532, -1610612736, 0, 65533, -1610612736, 0, 65534, -1610612736, 0, 65535, -1610612736, 0, 0, -1610612736, 0, 1, -1610612736, 0, 2, -1610612734, 0, 3, -1610612736, 0, 4, -1610612736, 0, 5, -1610612736, 0, 6, -1610612736, 0, 7, -1610612736, 0, 8, -1610612736, 0, 9, -1610612736, 0, 10, -1610612736, 0, 131066, -1610612733, 0, 131067, -1610612733, 0, 131068, -1610612733, 0, 131069, -1610612733, 0, 131070, -1610612733, 0, 131071, -1610612733, 0, 65536, -1610612733, 0, 65537, -1610612733, 0, 65538, -1610612735, 0, 65539, -1610612733, 0, 65540, -1610612733, 0, 65541, -1610612733, 0, 65542, -1610612733, 0, 65543, -1610612733, 0, 65544, -1610612733, 0, 65545, -1610612733, 0, 65546, -1610612733, 0, 196602, -1610612736, 0, 196603, -1610612736, 0, 196604, -1610612736, 0, 196605, -1610612736, 0, 196606, -1610612736, 0, 196607, -1610612736, 0, 131072, -1610612736, 0, 131073, -1610612736, 0, 131074, -1610612734, 0, 131075, -1610612736, 0, 131076, -1610612736, 0, 131077, -1610612736, 0, 131078, -1610612736, 0, 131079, -1610612736, 0, 131080, -1610612736, 0, 131081, -1610612736, 0, 131082, -1610612736, 0, 262138, -1610612736, 0, 262139, -1610612736, 0, 262140, -1610612736, 0, 262141, -1610612736, 0, 262142, -1610612736, 0, 262143, -1610612736, 0, 196608, -1610612736, 0, 196609, -1610612736, 0, 196610, -1610612734, 0, 196611, -1610612736, 0, 196612, -1610612736, 0, 196613, -1610612736, 0, 196614, -1610612736, 0, 196615, -1610612736, 0, 196616, -1610612736, 0, 196617, -1610612736, 0, 196618, -1610612736, 0, 327674, -1610612736, 0, 327675, -1610612736, 0, 327676, -1610612736, 0, 327677, -1610612736, 0, 327678, -1610612736, 0, 327679, -1610612736, 0, 262144, -1610612736, 0, 262145, -1610612736, 0, 262146, -1610612734, 0, 262147, -1610612736, 0, 262148, -1610612736, 0, 262149, -1610612736, 0, 262150, -1610612736, 0, 262151, -1610612736, 0, 262152, -1610612736, 0, 262153, -1610612736, 0, 262154, -1610612736, 0, 393210, -1610612736, 0, 393211, -1610612736, 0, 393212, -1610612736, 0, 393213, -1610612736, 0, 393214, -1610612736, 0, 393215, -1610612736, 0, 327680, -1610612736, 0, 327681, -1610612736, 0, 327682, -1610612734, 0, 327683, -1610612736, 0, 327684, -1610612736, 0, 327685, -1610612736, 0, 327686, -1610612736, 0, 327687, -1610612736, 0, 327688, -1610612736, 0, 327689, -1610612736, 0, 327690, -1610612736, 0, 458746, -1610612736, 0, 458747, -1610612736, 0, 458748, -1610612736, 0, 458749, -1610612736, 0, 458750, -1610612736, 0, 458751, -1610612736, 0, 393216, -1610612736, 0, 393217, -1610612736, 0, 393218, -1610612734, 0, 393219, -1610612736, 0, 393220, -1610612736, 0, 393221, -1610612736, 0, 393222, -1610612736, 0, 393223, -1610612736, 0, 393224, -1610612736, 0, 393225, -1610612736, 0, 393226, -1610612736, 0 )
 
 [node name="Player" type="KinematicBody2D" parent="WorldManager"]
-collision_mask = 6
+position = Vector2( 161, 95 )
 script = ExtResource( 4 )
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="WorldManager/Player"]
 position = Vector2( 0, -26.081 )
-scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-animation = "up_standing"
+animation = "down_standing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldManager/Player"]
 shape = SubResource( 5 )
 
+[node name="Camera2D" type="Camera2D" parent="WorldManager/Player"]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+smoothing_speed = 10.0
+
 [node name="Mob" parent="WorldManager" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 268, 334 )
 
 [node name="Mob2" parent="WorldManager" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 127, 122 )
 
 [node name="MenuManager" type="Node2D" parent="."]
