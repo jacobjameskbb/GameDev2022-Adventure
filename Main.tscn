@@ -167,7 +167,7 @@ shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="WorldManager/Player"]
 current = true
-zoom = Vector2( 0.6, 0.6 )
+zoom = Vector2( 0.4, 0.4 )
 smoothing_speed = 10.0
 
 [node name="Mob" parent="WorldManager" instance=ExtResource( 20 )]
