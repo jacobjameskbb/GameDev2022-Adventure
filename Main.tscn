@@ -1,27 +1,39 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://Assets/Tiles/grass tile.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Tiles/TileGrass.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/WorldManager.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown02.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown01.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown03.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Tiles/cross path.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown02.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkRight02.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkRight01.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp03.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown03.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft03.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft01.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp02.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft02.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp01.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Tiles/TilePathDownLeft.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Tiles/TilePathDownRight.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Tiles/TilePathUpRight.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Tiles/TilePathUpLeft.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/worm.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Assets/Tiles/horizantal tile path.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Tiles/vertical path tile.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Tiles/invisible barrier.png" type="Texture" id=23]
-
-[sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+[ext_resource path="res://Assets/Tiles/TilePathVerticalLeft.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Tiles/TilePathVerticalRight.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Tiles/TilePathHorizantal.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Tiles/TilePathHorizantalDown.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Tiles/TilePathFourWay.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Tiles/TilePathHorizantalUp.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Tiles/TilePathVertical.png" type="Texture" id=27]
 
 [sub_resource type="TileSet" id=4]
-0/name = "grass tile.png 0"
+0/name = "TileGrass.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 64, 64 )
+0/region = Rect2( 0, 0, 32, 32 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -31,11 +43,11 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-1/name = "cross path.png 1"
-1/texture = ExtResource( 19 )
+1/name = "TilePathDownLeft.png 1"
+1/texture = ExtResource( 16 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 64, 64 )
+1/region = Rect2( 0, 0, 32, 32 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
@@ -45,11 +57,11 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-2/name = "horizontal path tile.png 2"
-2/texture = ExtResource( 21 )
+2/name = "TilePathDownRight.png 2"
+2/texture = ExtResource( 17 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 64, 64 )
+2/region = Rect2( 0, 0, 32, 32 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
@@ -59,11 +71,11 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
-3/name = "vertical path tile.png 3"
-3/texture = ExtResource( 22 )
+3/name = "TilePathFourWay.png 3"
+3/texture = ExtResource( 25 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 0, 0, 64, 64 )
+3/region = Rect2( 0, 0, 32, 32 )
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
@@ -73,39 +85,173 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
-4/name = "invisible barrier.png 4"
+4/name = "TilePathHorizantal.png 4"
 4/texture = ExtResource( 23 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 0, 0, 64, 64 )
+4/region = Rect2( 0, 0, 32, 32 )
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape = SubResource( 9 )
 4/shape_one_way = false
-4/shape_one_way_margin = 1.0
-4/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 9 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
 4/z_index = 0
+5/name = "TilePathHorizantalDown.png 5"
+5/texture = ExtResource( 24 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "TilePathHorizantalUp.png 6"
+6/texture = ExtResource( 26 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "TilePathUpLeft.png 7"
+7/texture = ExtResource( 19 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 32, 32 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "TilePathUpRight.png 8"
+8/texture = ExtResource( 18 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 32, 32 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "TilePathVertical.png 9"
+9/texture = ExtResource( 27 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 32, 32 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "TilePathVerticalLeft.png 10"
+10/texture = ExtResource( 21 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 32, 32 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "TilePathVerticalRight.png 11"
+11/texture = ExtResource( 22 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 32, 32 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "WalkDown",
+"name": "down_run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "down_standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "left_standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "move_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "move_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "move_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "move_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "right_standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "up_standing",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 28.0
 height = 22.0
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 30.0
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -115,34 +261,39 @@ script = ExtResource( 3 )
 
 [node name="GroundTilemap" type="TileMap" parent="WorldManager"]
 tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( -196615, 4, 0, -196614, 4, 0, -196613, 4, 0, -196612, 4, 0, -196611, 4, 0, -196610, 4, 0, -196609, 4, 0, -262144, 4, 0, -262143, 4, 0, -262141, 4, 0, -262140, 4, 0, -262139, 4, 0, -262138, 4, 0, -262137, 4, 0, -262136, 4, 0, -262135, 4, 0, -262134, 4, 0, -262133, 4, 0, -131079, 4, 0, -131078, -1610612736, 0, -131077, -1610612736, 0, -131076, -1610612736, 0, -131075, -1610612736, 0, -131074, -1610612736, 0, -131073, -1610612736, 0, -196608, -1610612736, 0, -196607, -1610612736, 0, -196606, -1610612734, 0, -196605, -1610612736, 0, -196604, -1610612736, 0, -196603, -1610612736, 0, -196602, -1610612736, 0, -196601, -1610612736, 0, -196600, -1610612736, 0, -196599, -1610612736, 0, -196598, -1610612736, 0, -196597, 4, 0, -65543, 4, 0, -65542, -1610612736, 0, -65541, -1610612736, 0, -65540, -1610612736, 0, -65539, -1610612736, 0, -65538, -1610612736, 0, -65537, -1610612736, 0, -131072, -1610612736, 0, -131071, -1610612736, 0, -131070, -1610612734, 0, -131069, -1610612736, 0, -131068, -1610612736, 0, -131067, -1610612736, 0, -131066, -1610612736, 0, -131065, -1610612736, 0, -131064, -1610612736, 0, -131063, -1610612736, 0, -131062, -1610612736, 0, -131061, 4, 0, -7, 4, 0, -6, -1610612736, 0, -5, -1610612736, 0, -4, -1610612736, 0, -3, -1610612736, 0, -2, -1610612736, 0, -1, -1610612736, 0, -65536, -1610612736, 0, -65535, -1610612736, 0, -65534, -1610612734, 0, -65533, -1610612736, 0, -65532, -1610612736, 0, -65531, -1610612736, 0, -65530, -1610612736, 0, -65529, -1610612736, 0, -65528, -1610612736, 0, -65527, -1610612736, 0, -65526, -1610612736, 0, -65525, 4, 0, 65529, 4, 0, 65530, -1610612736, 0, 65531, -1610612736, 0, 65532, -1610612736, 0, 65533, -1610612736, 0, 65534, -1610612736, 0, 65535, -1610612736, 0, 0, -1610612736, 0, 1, -1610612736, 0, 2, -1610612734, 0, 3, -1610612736, 0, 4, -1610612736, 0, 5, -1610612736, 0, 6, -1610612736, 0, 7, -1610612736, 0, 8, -1610612736, 0, 9, -1610612736, 0, 10, -1610612736, 0, 11, 4, 0, 131066, -1610612733, 0, 131067, -1610612733, 0, 131068, -1610612733, 0, 131069, -1610612733, 0, 131070, -1610612733, 0, 131071, -1610612733, 0, 65536, -1610612733, 0, 65537, -1610612733, 0, 65538, -1610612735, 0, 65539, -1610612733, 0, 65540, -1610612733, 0, 65541, -1610612733, 0, 65542, -1610612733, 0, 65543, -1610612733, 0, 65544, -1610612733, 0, 65545, -1610612733, 0, 65546, -1610612733, 0, 196601, 4, 0, 196602, -1610612736, 0, 196603, -1610612736, 0, 196604, -1610612736, 0, 196605, -1610612736, 0, 196606, -1610612736, 0, 196607, -1610612736, 0, 131072, -1610612736, 0, 131073, -1610612736, 0, 131074, -1610612734, 0, 131075, -1610612736, 0, 131076, -1610612736, 0, 131077, -1610612736, 0, 131078, -1610612736, 0, 131079, -1610612736, 0, 131080, -1610612736, 0, 131081, -1610612736, 0, 131082, -1610612736, 0, 131083, 4, 0, 262137, 4, 0, 262138, -1610612736, 0, 262139, -1610612736, 0, 262140, -1610612736, 0, 262141, -1610612736, 0, 262142, -1610612736, 0, 262143, -1610612736, 0, 196608, -1610612736, 0, 196609, -1610612736, 0, 196610, -1610612734, 0, 196611, -1610612736, 0, 196612, -1610612736, 0, 196613, -1610612736, 0, 196614, -1610612736, 0, 196615, -1610612736, 0, 196616, -1610612736, 0, 196617, -1610612736, 0, 196618, -1610612736, 0, 196619, 4, 0, 327673, 4, 0, 327674, -1610612736, 0, 327675, -1610612736, 0, 327676, -1610612736, 0, 327677, -1610612736, 0, 327678, -1610612736, 0, 327679, -1610612736, 0, 262144, -1610612736, 0, 262145, -1610612736, 0, 262146, -1610612734, 0, 262147, -1610612736, 0, 262148, -1610612736, 0, 262149, -1610612736, 0, 262150, -1610612736, 0, 262151, -1610612736, 0, 262152, -1610612736, 0, 262153, -1610612736, 0, 262154, -1610612736, 0, 262155, 4, 0, 393209, 4, 0, 393210, -1610612736, 0, 393211, -1610612736, 0, 393212, -1610612736, 0, 393213, -1610612736, 0, 393214, -1610612736, 0, 393215, -1610612736, 0, 327680, -1610612736, 0, 327681, -1610612736, 0, 327682, -1610612734, 0, 327683, -1610612736, 0, 327684, -1610612736, 0, 327685, -1610612736, 0, 327686, -1610612736, 0, 327687, -1610612736, 0, 327688, -1610612736, 0, 327689, -1610612736, 0, 327690, -1610612736, 0, 327691, 4, 0, 458745, 4, 0, 458746, -1610612736, 0, 458747, -1610612736, 0, 458748, -1610612736, 0, 458749, -1610612736, 0, 458750, -1610612736, 0, 458751, -1610612736, 0, 393216, -1610612736, 0, 393217, -1610612736, 0, 393218, -1610612734, 0, 393219, -1610612736, 0, 393220, -1610612736, 0, 393221, -1610612736, 0, 393222, -1610612736, 0, 393223, -1610612736, 0, 393224, -1610612736, 0, 393225, -1610612736, 0, 393226, -1610612736, 0, 393227, 4, 0, 524281, 4, 0, 524282, 4, 0, 524283, 4, 0, 524284, 4, 0, 524285, 4, 0, 524286, 4, 0, 524287, 4, 0, 458752, 4, 0, 458753, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0 )
+tile_data = PoolIntArray( -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 9, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 9, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 9, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 9, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 9, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 131066, 4, 0, 131067, 4, 0, 131068, 4, 0, 131069, 4, 0, 131070, 4, 0, 131071, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 3, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 65542, 4, 0, 65543, 4, 0, 65544, 4, 0, 65545, 4, 0, 65546, 4, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 9, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 9, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 9, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 9, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 9, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0 )
 
-[node name="Player" type="KinematicBody2D" parent="WorldManager"]
-position = Vector2( 161, 95 )
+[node name="Player" type="KinematicBody2D" parent="WorldManager" groups=["Player"]]
 script = ExtResource( 4 )
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="WorldManager/Player"]
-position = Vector2( 0, -0.999998 )
+position = Vector2( 0, -26.081 )
 frames = SubResource( 1 )
-animation = "WalkDown"
+animation = "down_standing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldManager/Player"]
-position = Vector2( 0, -1 )
+position = Vector2( 0, -25 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="WorldManager/Player"]
 current = true
+zoom = Vector2( 0.5, 0.5 )
 smoothing_speed = 10.0
 
+[node name="EnemyDetector" type="Area2D" parent="WorldManager/Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldManager/Player/EnemyDetector"]
+position = Vector2( 0, -25 )
+shape = SubResource( 10 )
+
 [node name="Mob" parent="WorldManager" instance=ExtResource( 20 )]
-visible = false
 position = Vector2( 268, 334 )
 
-[node name="Mob2" parent="WorldManager" instance=ExtResource( 20 )]
-visible = false
-position = Vector2( 127, 122 )
-
 [node name="MenuManager" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="WorldManager/Player/EnemyDetector" to="WorldManager/Player" method="_on_EnemyDetector_body_entered"]
+[connection signal="body_exited" from="WorldManager/Player/EnemyDetector" to="WorldManager/Player" method="_on_EnemyDetector_body_exited"]

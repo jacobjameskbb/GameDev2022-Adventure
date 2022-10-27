@@ -1,12 +1,14 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+const moveSpeed = 250
+var velocity = Vector2()
+var attackWait = 80
+onready var player = get_node("/root/Main/WorldManager/Player")
+var hasAttacked = false
+var attackStun = 40
+var canAttack = false
 
-var target = self.position
-var velocity = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,29 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	velocity = Vector2((target.x - self.position.x)/abs(target.x - self.position.x), (target.y - self.position.y)/abs(target.y - self.position.y))
-	velocity = velocity.normalized() * 300
-	position +=  (velocity)*delta
+	if attackWait == 0:
+		attackWait = 80
+	if attackWait == 1:
+		canAttack = true
+	if attackWait <= 79:
+		attackWait -= 1
+	if attackWait == 80:
+		canAttack = false
+	if hasAttacked == true and attackStun >= 0:
+		attackStun -= 1
+	if attackStun == 0:
+		attackStun = 40
+		hasAttacked = false
+		attackWait -= 1
+func _physics_process(delta):
+	if attackWait >= 80 and hasAttacked == false:
+		var direction = (player.position - position).normalized()
+		move_and_slide(direction * moveSpeed)
+
+
+	
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("Player"):
+		attackWait -= 1
