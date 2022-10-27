@@ -2,9 +2,12 @@ extends KinematicBody2D
 var velocity = Vector2()
 var speed = 200
 var is_sprinting = false
+export var health: int = 10
+var enemyInRange = []
 func _ready():
 	$PlayerSprite.animation = "down_standing"
 	pass
+
 func get_input():
 	velocity = Vector2()
 	
@@ -59,6 +62,23 @@ func get_input():
 	else:
 		$PlayerSprite.stop()
 	
+
 func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+
+func _on_EnemyDetector_body_entered(body):
+	if body.is_in_group("Enemy"):
+		enemyInRange.append(body)
+		
+
+func _process(delta):
+	for enemy in enemyInRange:
+		if enemy.canAttack and enemy.hasAttacked == false:
+			health -= 1
+			print("Health = ",health)
+			enemy.hasAttacked = true
+
+func _on_EnemyDetector_body_exited(body):
+	if body in enemyInRange:
+		enemyInRange.erase(body)
