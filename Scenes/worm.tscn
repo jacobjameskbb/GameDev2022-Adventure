@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Gummies/Gummy Worm.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Gummies/64x64/Gummy Worm.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/worm.gd" type="Script" id=2]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 28.0

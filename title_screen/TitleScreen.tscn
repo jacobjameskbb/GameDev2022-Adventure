@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/scary-dream-font/ScaryDream-p76gy.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Gummies/Gummy Down Run 3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Gummies/64x64/Gummy Down Run 3.png" type="Texture" id=2]
 [ext_resource path="res://title_screen/buttons/OptionsButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://title_screen/buttons/Continuebutton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://title_screen/buttons/NewGameButton.tscn" type="PackedScene" id=5]
