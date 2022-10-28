@@ -11,10 +11,12 @@ config_version=4
 [application]
 
 config/name="Candy Crisis"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://title_screen/TitleScreen.tscn"
 
 [display]
 
+window/size/width=240
+window/size/height=160
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

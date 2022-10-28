@@ -1,20 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Tiles/TileGrass.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/WorldManager.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown01.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown02.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkRight02.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkRight01.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp03.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown03.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft03.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft01.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp02.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft02.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp01.png" type="Texture" id=15]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Tiles/TilePathDownLeft.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Tiles/TilePathDownRight.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Tiles/TilePathUpRight.png" type="Texture" id=18]
@@ -198,61 +187,6 @@
 11/shapes = [  ]
 11/z_index = 0
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "down_run",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "down_standing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "left_standing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "move_down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "move_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "move_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "move_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "right_standing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "up_standing",
-"speed": 5.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=5]
-radius = 28.0
-height = 22.0
-
-[sub_resource type="CapsuleShape2D" id=10]
-radius = 30.0
-
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
 
@@ -266,34 +200,9 @@ show_collision = true
 format = 1
 tile_data = PoolIntArray( -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 9, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 9, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 9, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 9, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 9, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 131066, 4, 0, 131067, 4, 0, 131068, 4, 0, 131069, 4, 0, 131070, 4, 0, 131071, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 3, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 65542, 4, 0, 65543, 4, 0, 65544, 4, 0, 65545, 4, 0, 65546, 4, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 9, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 9, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 9, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 9, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 9, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0 )
 
-[node name="Player" type="KinematicBody2D" parent="WorldManager" groups=["Player"]]
-script = ExtResource( 4 )
-
-[node name="PlayerSprite" type="AnimatedSprite" parent="WorldManager/Player"]
-position = Vector2( 0, -26.081 )
-frames = SubResource( 1 )
-animation = "down_standing"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldManager/Player"]
-position = Vector2( 0, -25 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 5 )
-
-[node name="Camera2D" type="Camera2D" parent="WorldManager/Player"]
-current = true
-zoom = Vector2( 0.5, 0.5 )
-smoothing_speed = 10.0
-
-[node name="EnemyDetector" type="Area2D" parent="WorldManager/Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldManager/Player/EnemyDetector"]
-position = Vector2( 0, -25 )
-shape = SubResource( 10 )
+[node name="Player" parent="WorldManager" instance=ExtResource( 4 )]
 
 [node name="Mob" parent="WorldManager" instance=ExtResource( 20 )]
-position = Vector2( 268, 334 )
+position = Vector2( 294, 185 )
 
 [node name="MenuManager" type="Node2D" parent="."]
-
-[connection signal="body_entered" from="WorldManager/Player/EnemyDetector" to="WorldManager/Player" method="_on_EnemyDetector_body_entered"]
-[connection signal="body_exited" from="WorldManager/Player/EnemyDetector" to="WorldManager/Player" method="_on_EnemyDetector_body_exited"]
