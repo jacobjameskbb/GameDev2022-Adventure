@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Gummy_King.png-a691c42e1ac7a1f461afc67f918f3d89.stex"
+path="res://.import/cliff face.png-8c85fac5e0599eacdc58090299fb1c56.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gummy_King.png"
-dest_files=[ "res://.import/Gummy_King.png-a691c42e1ac7a1f461afc67f918f3d89.stex" ]
+source_file="res://Assets/Tiles/cliff face.png"
+dest_files=[ "res://.import/cliff face.png-8c85fac5e0599eacdc58090299fb1c56.stex" ]
 
 [params]
 

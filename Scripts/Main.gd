@@ -9,4 +9,5 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed("F11"):
+		OS.window_fullscreen = !OS.window_fullscreen
