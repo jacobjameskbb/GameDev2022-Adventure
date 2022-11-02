@@ -5,7 +5,7 @@ var is_sprinting = false
 var health = 10
 var enemyInRange = []
 func _ready():
-	$PlayerSprite.animation = "down_standing"
+	$PlayerSprite.animation = "right_standing"
 	pass
 func get_input():
 	velocity = Vector2()
@@ -76,6 +76,7 @@ func _process(delta):
 			health -= 1
 			print("Health = ",health)
 			enemy.hasAttacked = true
+
 
 func _on_EnemyDetector_body_exited(body):
 	if body in enemyInRange:
