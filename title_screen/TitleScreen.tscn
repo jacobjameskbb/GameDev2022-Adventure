@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/title_screen_background.png" type="Texture" id=1]
 [ext_resource path="res://Assets/title_screen_start_button.png" type="Texture" id=2]
 [ext_resource path="res://Assets/title_screen_start_button_down.png" type="Texture" id=3]
 [ext_resource path="res://Assets/title_screen_exit_button.png" type="Texture" id=4]
 [ext_resource path="res://Assets/title_screen_exit_button_down.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/FadeToBlack.tscn" type="PackedScene" id=6]
 [ext_resource path="res://title_screen/title_screen.gd" type="Script" id=7]
 [ext_resource path="res://title_screen/ExitButton.gd" type="Script" id=8]
 
@@ -43,5 +44,9 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 script = ExtResource( 8 )
 
+[node name="FadeToBlack" parent="." instance=ExtResource( 6 )]
+visible = false
+
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_ExitButton_pressed"]
+[connection signal="fade_finished" from="FadeToBlack" to="." method="_on_FadeToBlack_fade_finished"]
