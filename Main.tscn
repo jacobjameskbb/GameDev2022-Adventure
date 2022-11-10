@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Tiles/TileGrass.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
@@ -187,6 +187,66 @@
 11/shapes = [  ]
 11/z_index = 0
 
+[sub_resource type="Animation" id=5]
+resource_name = "BlackSplitLeft"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -121, -81 ), Vector2( -241, -81 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -121, -81 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "BlackSplitRight"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -81 ), Vector2( 120, -81 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -81 ) ]
+}
+
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
 
@@ -204,5 +264,25 @@ tile_data = PoolIntArray( -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 
 
 [node name="Mob" parent="WorldManager" instance=ExtResource( 20 )]
 position = Vector2( 294, 185 )
+
+[node name="BlackSplitLeft" type="ColorRect" parent="WorldManager"]
+margin_left = -121.0
+margin_top = -81.0
+margin_bottom = 81.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldManager/BlackSplitLeft"]
+anims/BlackSplitLeft = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+
+[node name="BlackSplitRight" type="ColorRect" parent="WorldManager"]
+margin_top = -81.0
+margin_right = 121.0
+margin_bottom = 81.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldManager/BlackSplitRight"]
+anims/BlackSplitRight = SubResource( 7 )
+anims/RESET = SubResource( 8 )
 
 [node name="MenuManager" type="Node2D" parent="."]

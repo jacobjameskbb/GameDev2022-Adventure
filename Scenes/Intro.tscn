@@ -261,7 +261,6 @@ position = Vector2( 111, 80 )
 current = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 margin_left = -76.0
 margin_top = -108.0
 margin_right = 324.0

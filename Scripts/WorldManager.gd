@@ -6,7 +6,12 @@ extends Node2D
 # World manager should contain things such as the player, the environment, the enemies, etc.
 
 func _ready():
-	pass # Replace with function body.
+	$BlackSplitLeft.show()
+	$BlackSplitRight.show()
+	$BlackSplitLeft/AnimationPlayer.play("BlackSplitLeft")
+	$BlackSplitRight/AnimationPlayer.play("BlackSplitRight")
+	$BlackSplitLeft.hide()
+	$BlackSplitRight.hide()
 
 func _process(_delta):
 	for node in self.get_children():

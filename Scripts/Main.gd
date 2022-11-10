@@ -6,7 +6,7 @@ extends Node
 # Things such as pausing, starting the game, and ending the game
 
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func _process(_delta):
 	pass
