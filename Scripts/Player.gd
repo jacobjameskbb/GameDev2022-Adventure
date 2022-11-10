@@ -1,6 +1,6 @@
 extends KinematicBody2D
 var velocity = Vector2()
-var speed = 200
+var speed = 2000
 var is_sprinting = false
 var health = 10
 var enemyInRange = []
