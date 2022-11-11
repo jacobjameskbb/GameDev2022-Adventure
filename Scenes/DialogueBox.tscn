@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/fonts/pixgamer-font/PixgamerRegular-PKxO2.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="DialogueBox" type="Control"]
+margin_right = 230.0
+margin_bottom = 42.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 230.0
+margin_bottom = 42.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_right = -3.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Go forth and save our kingdom from this calamity"
+text = "Go forth and save our kingdom from this calamity"
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
