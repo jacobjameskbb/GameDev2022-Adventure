@@ -109,7 +109,7 @@ script = ExtResource( 1 )
 position = Vector2( -15, -15 )
 frames = SubResource( 1 )
 animation = "down_attack1"
-frame = 1
+frame = 2
 playing = true
 centered = false
 

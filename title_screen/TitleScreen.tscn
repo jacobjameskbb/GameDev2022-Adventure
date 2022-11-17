@@ -17,7 +17,10 @@ script = ExtResource( 7 )
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -120.0
+margin_bottom = -80.0
 texture = ExtResource( 1 )
+stretch_mode = 5
 
 [node name="StartButton" type="TextureButton" parent="."]
 anchor_left = 0.5

@@ -1,14 +1,22 @@
 extends KinematicBody2D
 var velocity = Vector2()
-var speed = 200
+var speed = 150
 var is_sprinting = false
 var health = 10
 var enemyInRange = []
 var facing = "down"
 var attackCharge = 0
 var crash = NAN
+
+onready var fist = preload("res://Scenes/worm.tscn")
+
 func _ready():
-	$PlayerSprite.animation = "down_standing"
+	var tilemap_rect = get_parent().get_node("GroundTileMap").get_used_rect()
+	var tilemap_cell_size = get_parent().get_node("GroundTileMap").cell_size
+	$Camera2D.limit_left = tilemap_rect.position.x * tilemap_cell_size.x
+	$Camera2D.limit_right = tilemap_rect.end.x * tilemap_cell_size.x
+	$Camera2D.limit_top = tilemap_rect.position.y * tilemap_cell_size.y
+	$Camera2D.limit_bottom = tilemap_rect.end.y * tilemap_cell_size.y
 	pass
 func get_input():
 	velocity = Vector2()
@@ -56,14 +64,19 @@ func get_input():
 		$PlayerSprite.animation = "up_standing"
 		
 	if Input.is_action_just_pressed("sprint_shift"):
-		speed = 300
+		speed = 200
 		is_sprinting = true
 	
 	if Input.is_action_just_released("sprint_shift"):
-		speed = 200
+		speed = 150
 		is_sprinting = false
 	velocity = velocity.normalized() * speed
 	if Input.is_action_just_pressed("ctrl"):
+		
+		var current_fist = fist.instance()
+		add_child(current_fist)
+		current_fist.position = position + Vector2(50,0)
+		
 		$PlayerSprite.animation = ("charge_"+facing)
 	if Input.is_action_pressed("ctrl"):
 		attackCharge += 1
