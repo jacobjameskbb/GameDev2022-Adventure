@@ -1,119 +1,36 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PlayerImproved.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown02.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown01.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkRight02.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp03.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown03.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft01.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft02.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft03.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkRight01.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp02.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp01.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Gummies/32x32/ChargeDown2.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Gummies/32x32/ChargeDown3.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Gummies/32x32/AttackDown1.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Gummies/32x32/AttackCharge2Down.png" type="Texture" id=16]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "charge_down",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "charge_left",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "charge_right",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "charge_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "down_attack1",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "down_attack2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "down_run",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "down_standing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "left_standing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "move_down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "move_left",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "move_right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "move_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "right_standing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "up_standing",
+"name": "walk_down",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 28.0
+radius = 36.0
 height = 22.0
 
-[sub_resource type="CapsuleShape2D" id=10]
-radius = 30.0
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 14.0
+height = 8.0
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
 
-[node name="PlayerSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 104, 64 )
-frames = SubResource( 1 )
-animation = "move_down"
-frame = 2
-centered = false
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 120, 80 )
+frames = SubResource( 6 )
+animation = "walk_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 120, 80 )
+position = Vector2( 120, 81 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 5 )
 
@@ -127,7 +44,7 @@ position = Vector2( 21, 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
 position = Vector2( 99, 49 )
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="body_exited" from="EnemyDetector" to="." method="_on_EnemyDetector_body_exited"]

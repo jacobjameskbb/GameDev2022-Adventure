@@ -32,7 +32,7 @@ func get_input():
 			$PlayerSprite.animation = "move_down"
 	
 	elif Input.is_action_just_released("down"):
-		$PlayerSprite.animation = "down_standing"
+		$PlayerSprite.animation.frame = 0
 	
 	elif Input.is_action_pressed("right"):
 		facing = "right"
@@ -44,7 +44,7 @@ func get_input():
 		velocity.x += 1
 	
 	if Input.is_action_just_released("right"):
-		$PlayerSprite.animation = "right_standing"
+		$PlayerSprite.animation.frame = 0
 	
 	if Input.is_action_pressed("left"):
 		facing = "left"
@@ -53,7 +53,7 @@ func get_input():
 	
 	if Input.is_action_just_released("left"):
 	
-		$PlayerSprite.animation = "left_standing"
+		$PlayerSprite.animation.frame = 0
 	
 	if Input.is_action_pressed("up"):
 		facing = "up"
@@ -61,7 +61,7 @@ func get_input():
 		$PlayerSprite.animation = "move_up"
 	
 	if Input.is_action_just_released("up"):
-		$PlayerSprite.animation = "up_standing"
+		$PlayerSprite.animation.frame = 0
 		
 	if Input.is_action_just_pressed("sprint_shift"):
 		speed = 200
