@@ -36,16 +36,24 @@ func _physics_process(_delta: float) -> void:
 		if move_direction==Vector2(-1,0):
 			$AnimatedSprite.play("walk_left")
 			facing="l"
+		savedAni=$AnimatedSprite.animation
 	#attacking
 	if Input.is_action_just_pressed("attack"):
-		savedAni=$AnimatedSprite.animation
 		if facing=="d":
 			$AnimatedSprite.play("punch_down_lv.3")
 			isAttacking=true
 			$AttackAreaDown/CollisionShape2D.disabled=false
+		if facing=="u":
+			$AnimatedSprite.play("punch_up_lv.3")
+			isAttacking=true
+			$AttackAreaUp/CollisionShape2D.disabled=false
 	print(move_direction,facing,isAttacking)
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "punch_down_lv.3":
 		$AttackAreaDown/CollisionShape2D.disabled=true
+		$AnimatedSprite.play(savedAni)
+		isAttacking=false
+	if $AnimatedSprite.animation == "punch_up_lv.3":
+		$AttackAreaUp/CollisionShape2D.disabled=true
 		$AnimatedSprite.play(savedAni)
 		isAttacking=false

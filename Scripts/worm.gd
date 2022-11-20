@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-const moveSpeed = 250
+const moveSpeed = 100
 var velocity = Vector2()
 var attackWait = 80
 onready var player = get_node("/root/Main/WorldManager/Player")

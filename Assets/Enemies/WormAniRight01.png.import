@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Gummy Down Run 3.png-2731e701a2356dcc3a2c0fbc04fcce88.stex"
+path="res://.import/WormAniRight01.png-4f67ce3e142ccb4171680b668b40378a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gummies/64x64/Gummy Down Run 3.png"
-dest_files=[ "res://.import/Gummy Down Run 3.png-2731e701a2356dcc3a2c0fbc04fcce88.stex" ]
+source_file="res://Assets/Enemies/WormAniRight01.png"
+dest_files=[ "res://.import/WormAniRight01.png-4f67ce3e142ccb4171680b668b40378a.stex" ]
 
 [params]
 

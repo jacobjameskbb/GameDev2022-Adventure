@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/up 1.png-fb881e2127aaca255d7cf4066390c750.stex"
+path="res://.import/PlayerAniPunchUp03.png-16ec74d41aaa28ab7280853394168d71.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gummies/64x64/up 1.png"
-dest_files=[ "res://.import/up 1.png-fb881e2127aaca255d7cf4066390c750.stex" ]
+source_file="res://Assets/Gummies/32x32/PlayerAniPunchUp03.png"
+dest_files=[ "res://.import/PlayerAniPunchUp03.png-16ec74d41aaa28ab7280853394168d71.stex" ]
 
 [params]
 

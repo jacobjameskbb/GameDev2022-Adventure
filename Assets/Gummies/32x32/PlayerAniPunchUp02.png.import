@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Gummy Bear Left 3.png-6aa81fe276d2d7c16599dbe7245aa62a.stex"
+path="res://.import/PlayerAniPunchUp02.png-c49ae923c846b036a5cb33fb5ae76c33.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gummies/64x64/Gummy Bear Left 3.png"
-dest_files=[ "res://.import/Gummy Bear Left 3.png-6aa81fe276d2d7c16599dbe7245aa62a.stex" ]
+source_file="res://Assets/Gummies/32x32/PlayerAniPunchUp02.png"
+dest_files=[ "res://.import/PlayerAniPunchUp02.png-c49ae923c846b036a5cb33fb5ae76c33.stex" ]
 
 [params]
 
