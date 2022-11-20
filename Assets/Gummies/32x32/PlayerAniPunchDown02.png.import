@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerAttckSheet.png-c77f77d9f9fbf6725cb57c4a1b286b3e.stex"
+path="res://.import/PlayerAniPunchDown02.png-edfe71f32929336a558d89cd4c536916.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gummies/32x32/PlayerAttckSheet.png"
-dest_files=[ "res://.import/PlayerAttckSheet.png-c77f77d9f9fbf6725cb57c4a1b286b3e.stex" ]
+source_file="res://Assets/Gummies/32x32/PlayerAniPunchDown02.png"
+dest_files=[ "res://.import/PlayerAniPunchDown02.png-edfe71f32929336a558d89cd4c536916.stex" ]
 
 [params]
 

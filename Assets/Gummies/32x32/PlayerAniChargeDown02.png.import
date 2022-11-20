@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ChargeDown2.png-1eaac1a6791c5fb05f6bfa529e49885b.stex"
+path="res://.import/PlayerAniChargeDown02.png-9a147c6c66bfd01f87bee511bd2c2771.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gummies/32x32/ChargeDown2.png"
-dest_files=[ "res://.import/ChargeDown2.png-1eaac1a6791c5fb05f6bfa529e49885b.stex" ]
+source_file="res://Assets/Gummies/32x32/PlayerAniChargeDown02.png"
+dest_files=[ "res://.import/PlayerAniChargeDown02.png-9a147c6c66bfd01f87bee511bd2c2771.stex" ]
 
 [params]
 

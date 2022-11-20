@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/PlayerImproved.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown02.png" type="Texture" id=2]
@@ -13,9 +13,20 @@
 [ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkLeft02.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkUp02.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkRight02.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniChargeDown01.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniChargeDown02.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniPreChargeDown.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniPunchDown02.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniPunchDown03.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Gummies/32x32/PlayerAniPunchDown01.png" type="Texture" id=19]
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "charge_down",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "idle_down",
@@ -34,6 +45,26 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "idle_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "precharge_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "punch_down_lv.1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "punch_down_lv.2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "punch_down_lv.3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 2 ) ],
@@ -57,38 +88,23 @@ animations = [ {
 "speed": 6.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=5]
-radius = 36.0
-height = 22.0
-
 [sub_resource type="CapsuleShape2D" id=7]
-radius = 14.0
 height = 8.0
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 120, 80 )
+position = Vector2( 120, 113 )
 frames = SubResource( 6 )
-animation = "idle_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 120, 81 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 5 )
+animation = "idle_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 120, 80 )
 current = true
-smoothing_speed = 10.0
 
-[node name="EnemyDetector" type="Area2D" parent="."]
-position = Vector2( 21, 31 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
-position = Vector2( 99, 49 )
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( 120, 80 )
 shape = SubResource( 7 )
 
-[connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
-[connection signal="body_exited" from="EnemyDetector" to="." method="_on_EnemyDetector_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

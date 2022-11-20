@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AttackFist.png-e60ee6df89e9195bf927c3f8fbcc0f0f.stex"
+path="res://.import/PlayerAniChargeDown01.png-4fc45ecc700d1c2517411e097482a4fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gummies/32x32/AttackFist.png"
-dest_files=[ "res://.import/AttackFist.png-e60ee6df89e9195bf927c3f8fbcc0f0f.stex" ]
+source_file="res://Assets/Gummies/32x32/PlayerAniChargeDown01.png"
+dest_files=[ "res://.import/PlayerAniChargeDown01.png-4fc45ecc700d1c2517411e097482a4fd.stex" ]
 
 [params]
 
