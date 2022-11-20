@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/PlayerImproved.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Gummies/32x32/PlayerAniWalkDown02.png" type="Texture" id=2]
@@ -53,21 +53,21 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 19 ) ],
-"loop": true,
+"loop": false,
 "name": "punch_down_lv.1",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 19 ) ],
-"loop": true,
+"loop": false,
 "name": "punch_down_lv.2",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ) ],
-"loop": true,
+"loop": false,
 "name": "punch_down_lv.3",
-"speed": 5.0
+"speed": 18.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk_down",
 "speed": 6.0
@@ -91,6 +91,9 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=7]
 height = 8.0
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 4, 32 )
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
 
@@ -106,5 +109,12 @@ current = true
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( 120, 80 )
 shape = SubResource( 7 )
+
+[node name="AttackAreaDown" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackAreaDown"]
+position = Vector2( 129, 112 )
+shape = SubResource( 8 )
+disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
