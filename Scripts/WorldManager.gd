@@ -10,7 +10,7 @@ func _ready():
 	$BlackSplitRight.show()
 	$BlackSplitLeft/AnimationPlayer.play("BlackSplitLeft")
 	$BlackSplitRight/AnimationPlayer.play("BlackSplitRight")
-
+	
 func _process(_delta):
 	for node in self.get_children():
 		if node.is_in_group('enemy'):
@@ -20,7 +20,7 @@ func _process(_delta):
 	
 		
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	$BlackSplitLeft.hide()
 	$BlackSplitRight.hide()
 	add_child(load("res://Player.tscn").instance())

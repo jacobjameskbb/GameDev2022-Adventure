@@ -11,6 +11,7 @@ func _physics_process(_delta: float) -> void:
 	)
 	var move_direction := input_vector.normalized()
 	if isAttacking==false:
+		# warning-ignore:return_value_discarded
 		move_and_slide(speed*move_direction)
 	#movement animations
 	if isAttacking==false:
@@ -47,7 +48,7 @@ func _physics_process(_delta: float) -> void:
 			$AnimatedSprite.play("punch_up_lv.3")
 			isAttacking=true
 			$AttackAreaUp/CollisionShape2D.disabled=false
-	print(move_direction,facing,isAttacking)
+	#print(move_direction,facing,isAttacking)
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "punch_down_lv.3":
 		$AttackAreaDown/CollisionShape2D.disabled=true
@@ -57,3 +58,13 @@ func _on_AnimatedSprite_animation_finished():
 		$AttackAreaUp/CollisionShape2D.disabled=true
 		$AnimatedSprite.play(savedAni)
 		isAttacking=false
+
+
+func _on_AttackAreaDown_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.health -= 10
+
+
+func _on_AttackAreaUp_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.health -= 10
