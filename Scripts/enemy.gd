@@ -4,7 +4,7 @@ extends KinematicBody2D
 const moveSpeed = 50
 var velocity = Vector2()
 onready var target = self
-export var health = 100
+export var health = 50
 
 var attackWait = 80
 var hasAttacked = false
@@ -29,10 +29,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if health <= 20:
+	if health <= 0:
+		self.queue_free()
+	
+	if health <= 10:
 		current_state = states["flee"]
 		
-	$HealthBar/Health.rect_size.x = 18 - 18*float((1 - (health/100)))
+	$HealthBar/Health.rect_size.x = 18 *(health/50.0)
 		
 func _physics_process(delta):
 
