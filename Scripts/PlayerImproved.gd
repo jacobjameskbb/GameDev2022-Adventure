@@ -4,6 +4,14 @@ var facing = "d"
 var isAttacking = false
 var savedAni= "idle_down"
 #movement
+func _ready():
+	var tilemap_rect = get_parent().get_node("GroundTileMap").get_used_rect()
+	var tilemap_cell_size = get_parent().get_node("GroundTileMap").cell_size
+	$Camera2D.limit_left = tilemap_rect.position.x * tilemap_cell_size.x
+	$Camera2D.limit_right = tilemap_rect.end.x * tilemap_cell_size.x
+	$Camera2D.limit_top = tilemap_rect.position.y * tilemap_cell_size.y
+	$Camera2D.limit_bottom = tilemap_rect.end.y * tilemap_cell_size.y
+	pass
 func _physics_process(_delta: float) -> void:
 	var input_vector := Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
