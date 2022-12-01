@@ -190,7 +190,7 @@
 14/shapes = [  ]
 14/z_index = 0
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "FadeFromBlack"
 length = 3.0
 tracks/0/type = "value"
@@ -206,7 +206,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -252,8 +252,8 @@ margin_bottom = 292.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
-anims/FadeFromBlack = SubResource( 4 )
-anims/RESET = SubResource( 5 )
+anims/FadeFromBlack = SubResource( 2 )
+anims/RESET = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

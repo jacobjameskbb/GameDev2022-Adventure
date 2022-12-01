@@ -15,8 +15,8 @@ run/main_scene="res://title_screen/TitleScreen.tscn"
 
 [display]
 
-window/size/width=240
-window/size/height=160
+window/size/width=480
+window/size/height=320
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

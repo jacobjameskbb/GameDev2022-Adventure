@@ -48,6 +48,8 @@ func _physics_process(_delta: float) -> void:
 			$AnimatedSprite.play("punch_up_lv.3")
 			isAttacking=true
 			$AttackAreaUp/CollisionShape2D.disabled=false
+			
+		
 	#print(move_direction,facing,isAttacking)
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "punch_down_lv.3":
@@ -66,5 +68,15 @@ func _on_AttackAreaDown_body_entered(body):
 
 
 func _on_AttackAreaUp_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.health -= 10
+
+
+func _on_AttackAreaLeft_body_entered(body):
+	if body.is_in_group("Enemy"):
+		body.health -= 10
+
+
+func _on_AttackAreaRight_body_entered(body):
 	if body.is_in_group("Enemy"):
 		body.health -= 10
