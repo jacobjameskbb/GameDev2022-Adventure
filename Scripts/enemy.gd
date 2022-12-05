@@ -6,10 +6,10 @@ var velocity = Vector2()
 onready var target = self
 export var health = 50
 
-var attackWait = 80
-var hasAttacked = false
-var attackStun = 40
-var canAttack = false
+var attacking = false
+
+var direction = Vector2.ZERO
+var facing = ''
 
 # Define the different modes the enemy can be in
 var states = {
@@ -21,6 +21,14 @@ var states = {
 
 # Defines the current state the enemy is in
 var current_state = 0
+
+# Sets each direction to an attack box for ease
+onready var attack_boxes = {
+	"up":$AttackUp,
+	"down":$AttackDown,
+	"left":$AttackLeft,
+	"right":$AttackRight
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,21 +47,40 @@ func _process(delta):
 		
 func _physics_process(delta):
 
+	if abs(direction.x) >= abs(direction.y):
+		if direction.x >= 0:
+			facing = 'right'
+		elif direction.x <= 0:
+			facing = 'left'
+			
+	elif abs(direction.x) <= abs(direction.y):
+		if direction.y >= 0:
+			facing = 'down'
+		elif direction.y <= 0:
+			facing = 'up'
+
 	# If the enemy is idle, 
 	if current_state == states["idle"]:
-		pass
+		stop_attacking()
 		
 	# If the enemy is chasing
 	if current_state == states["chase"]:
-		var direction = (target.position - position).normalized()
+		stop_attacking()
+		direction = (target.position - position).normalized()
 		move_and_slide(direction * moveSpeed)
 	
 	# If the enemy is attacking
 	if current_state == states["attack"]:
-		pass
+		if !attacking:
+			print('attacking')
+			attacking = true
+			$attackDelayTimer.start()
+		direction = (target.position - position).normalized()
+		
 		
 	# If the enemy is fleeing
 	if current_state == states["flee"]:
+		stop_attacking()
 		var direction = -(target.position - position).normalized()
 		move_and_slide(direction * moveSpeed)
 	
@@ -61,8 +88,10 @@ func _physics_process(delta):
 	#	var direction = (target - 6position).normalized()
 	#	move_and_slide(direction * moveSpeed)
 
-
-
+func stop_attacking():
+	attacking = false
+	$attackDelayTimer.stop()
+	$attacktimer.stop()
 
 func _on_PlayerDetectChase_body_entered(body):
 	if body.is_in_group("Player") and current_state != states["flee"]:
@@ -79,9 +108,24 @@ func _on_PlayerDetectChase_body_exited(body):
 func _on_PlayerDetectAttack_body_entered(body):
 	if body.is_in_group("Player") and current_state != states["flee"]:
 		current_state = states["attack"]
-		
+	
 
 
 func _on_PlayerDetectAttack_body_exited(body):
 	if body.is_in_group("Player") and current_state != states["flee"]:
 		current_state = states["chase"]
+
+
+func _on_attacktimer_timeout():
+	$AttackDown/shape.disabled = true
+	$AttackUp/shape.disabled = true
+	$AttackLeft/shape.disabled = true
+	$AttackRight/shape.disabled = true
+	$attackDelayTimer.start()
+
+func _on_attackDelayTimer_timeout():
+	print('dong')
+	if attack_boxes[facing].get_node("shape").disabled == true:
+		print('ding')
+		attack_boxes[facing].get_node("shape").disabled = false
+		$attacktimer.start()
