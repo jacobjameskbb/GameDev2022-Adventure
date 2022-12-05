@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Enemies/WormAniRight01.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/enemy.gd" type="Script" id=2]
@@ -27,10 +27,7 @@ radius = 150.0
 [sub_resource type="CircleShape2D" id=4]
 radius = 50.0
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 17.4674, 29.5488 )
-
-[node name="worm" type="KinematicBody2D" groups=[
+[node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 position = Vector2( 54.0326, 32.0488 )
@@ -79,45 +76,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="attackDelayTimer" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="attacktimer" type="Timer" parent="."]
-wait_time = 0.2
-
-[node name="AttackUp" type="Area2D" parent="."]
-
-[node name="shape" type="CollisionShape2D" parent="AttackUp"]
-position = Vector2( 0, -24 )
-shape = SubResource( 5 )
-disabled = true
-
-[node name="AttackDown" type="Area2D" parent="."]
-
-[node name="shape" type="CollisionShape2D" parent="AttackDown"]
-position = Vector2( 0, 24 )
-shape = SubResource( 5 )
-disabled = true
-
-[node name="AttackRight" type="Area2D" parent="."]
-
-[node name="shape" type="CollisionShape2D" parent="AttackRight"]
-position = Vector2( 24, 0 )
-rotation = 1.5708
-shape = SubResource( 5 )
-disabled = true
-
-[node name="AttackLeft" type="Area2D" parent="."]
-
-[node name="shape" type="CollisionShape2D" parent="AttackLeft"]
-position = Vector2( -24, 0 )
-rotation = 1.5708
-shape = SubResource( 5 )
-disabled = true
-
 [connection signal="body_entered" from="PlayerDetectChase" to="." method="_on_PlayerDetectChase_body_entered"]
 [connection signal="body_exited" from="PlayerDetectChase" to="." method="_on_PlayerDetectChase_body_exited"]
 [connection signal="body_entered" from="PlayerDetectAttack" to="." method="_on_PlayerDetectAttack_body_entered"]
 [connection signal="body_exited" from="PlayerDetectAttack" to="." method="_on_PlayerDetectAttack_body_exited"]
-[connection signal="timeout" from="attackDelayTimer" to="." method="_on_attackDelayTimer_timeout"]
-[connection signal="timeout" from="attacktimer" to="." method="_on_attacktimer_timeout"]
