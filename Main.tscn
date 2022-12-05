@@ -90,7 +90,10 @@ anims/BlackSplitLeft = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
 [node name="BlackSplitRight" type="ColorRect" parent="WorldManager"]
+<<<<<<< HEAD
 visible = false
+=======
+>>>>>>> d7be156267613944d595a260a811854be1290d64
 margin_left = 119.0
 margin_right = 359.0
 margin_bottom = 480.0
