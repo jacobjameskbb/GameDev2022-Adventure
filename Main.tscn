@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/WorldManager.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/worm.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "BlackSplitLeft"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -20,7 +20,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -240, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -35,7 +35,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "BlackSplitRight"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -50,7 +50,7 @@ tracks/0/keys = {
 "values": [ Vector2( 240, 0 ), Vector2( 480, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -86,14 +86,10 @@ margin_bottom = 480.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WorldManager/BlackSplitLeft"]
-anims/BlackSplitLeft = SubResource( 2 )
-anims/RESET = SubResource( 3 )
+anims/BlackSplitLeft = SubResource( 1 )
+anims/RESET = SubResource( 2 )
 
 [node name="BlackSplitRight" type="ColorRect" parent="WorldManager"]
-<<<<<<< HEAD
-visible = false
-=======
->>>>>>> d7be156267613944d595a260a811854be1290d64
 margin_left = 119.0
 margin_right = 359.0
 margin_bottom = 480.0
@@ -103,8 +99,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WorldManager/BlackSplitRight"]
-anims/BlackSplitRight = SubResource( 4 )
-anims/RESET = SubResource( 5 )
+anims/BlackSplitRight = SubResource( 3 )
+anims/RESET = SubResource( 4 )
 
 [node name="TestWorm" parent="WorldManager" instance=ExtResource( 4 )]
 position = Vector2( 707.42, 145.369 )
