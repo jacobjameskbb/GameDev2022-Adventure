@@ -273,8 +273,8 @@ anims/BlackSplitLeft = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
 [node name="BlackSplitRight" type="ColorRect" parent="WorldManager"]
-margin_left = 240.0
-margin_right = 480.0
+margin_left = 119.0
+margin_right = 359.0
 margin_bottom = 480.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
