@@ -72,7 +72,6 @@ func _physics_process(delta):
 	# If the enemy is attacking
 	if current_state == states["attack"]:
 		if !attacking:
-			print('attacking')
 			attacking = true
 			$attackDelayTimer.start()
 		direction = (target.position - position).normalized()
@@ -124,8 +123,30 @@ func _on_attacktimer_timeout():
 	$attackDelayTimer.start()
 
 func _on_attackDelayTimer_timeout():
-	print('dong')
 	if attack_boxes[facing].get_node("shape").disabled == true:
-		print('ding')
 		attack_boxes[facing].get_node("shape").disabled = false
 		$attacktimer.start()
+
+
+func _on_AttackUp_body_entered(body):
+	if body.is_in_group("Player"):
+		body.player_health -= 10
+		print(body.player_health)
+
+
+func _on_AttackLeft_body_entered(body):
+	if body.is_in_group("Player"):
+		body.player_health -= 10
+		print(body.player_health)
+
+
+func _on_AttackDown_body_entered(body):
+	if body.is_in_group("Player"):
+		body.player_health -= 10
+		print(body.player_health)
+
+
+func _on_AttackRight_body_entered(body):
+	if body.is_in_group("Player"):
+		body.player_health -= 10
+		print(body.player_health)

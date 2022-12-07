@@ -5,6 +5,8 @@ var isAttacking = false
 var savedAni= "idle_down"
 #movement
 
+var player_health = 100
+
 func _ready():
 	var tilemap_rect = get_parent().get_node("GroundTileMap").get_used_rect()
 	var tilemap_cell_size = get_parent().get_node("GroundTileMap").cell_size

@@ -6,14 +6,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "left",
 "speed": 5.0
 } ]
 
@@ -80,10 +80,11 @@ __meta__ = {
 }
 
 [node name="attackDelayTimer" type="Timer" parent="."]
-wait_time = 0.5
+one_shot = true
 
 [node name="attacktimer" type="Timer" parent="."]
 wait_time = 0.2
+one_shot = true
 
 [node name="AttackUp" type="Area2D" parent="."]
 
@@ -121,3 +122,7 @@ disabled = true
 [connection signal="body_exited" from="PlayerDetectAttack" to="." method="_on_PlayerDetectAttack_body_exited"]
 [connection signal="timeout" from="attackDelayTimer" to="." method="_on_attackDelayTimer_timeout"]
 [connection signal="timeout" from="attacktimer" to="." method="_on_attacktimer_timeout"]
+[connection signal="body_entered" from="AttackUp" to="." method="_on_AttackUp_body_entered"]
+[connection signal="body_entered" from="AttackDown" to="." method="_on_AttackDown_body_entered"]
+[connection signal="body_entered" from="AttackRight" to="." method="_on_AttackRight_body_entered"]
+[connection signal="body_entered" from="AttackLeft" to="." method="_on_AttackLeft_body_entered"]
