@@ -5,8 +5,10 @@ var isAttacking = false
 var savedAni= "idle_down"
 #movement
 
-var player_health = 100
+var player_health = 30
 
+	
+		
 func _ready():
 	var tilemap_rect = get_parent().get_node("GroundTileMap").get_used_rect()
 	var tilemap_cell_size = get_parent().get_node("GroundTileMap").cell_size
@@ -17,6 +19,10 @@ func _ready():
 	pass
 
 func _physics_process(_delta: float) -> void:
+	
+	if player_health <= 0:
+		get_tree().change_scene("res://title_screen/TitleScreen.tscn")
+	
 	var input_vector := Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -60,7 +66,14 @@ func _physics_process(_delta: float) -> void:
 			$AnimatedSprite.play("punch_up_lv.3")
 			isAttacking=true
 			$AttackAreaUp/CollisionShape2D.disabled=false
-			
+		if facing=="l":
+			$AnimatedSprite.play("punch_left_lv.3")
+			isAttacking=true
+			$AttackAreaLeft/CollisionShape2D.disabled=false
+		if facing=="r":
+			$AnimatedSprite.play("punch_right_lv.3")
+			isAttacking=true
+			$AttackAreaRight/CollisionShape2D.disabled=false
 		
 	#print(move_direction,facing,isAttacking)
 func _on_AnimatedSprite_animation_finished():
@@ -70,6 +83,14 @@ func _on_AnimatedSprite_animation_finished():
 		isAttacking=false
 	if $AnimatedSprite.animation == "punch_up_lv.3":
 		$AttackAreaUp/CollisionShape2D.disabled=true
+		$AnimatedSprite.play(savedAni)
+		isAttacking=false
+	if $AnimatedSprite.animation == "punch_left_lv.3":
+		$AttackAreaLeft/CollisionShape2D.disabled=true
+		$AnimatedSprite.play(savedAni)
+		isAttacking=false
+	if $AnimatedSprite.animation == "punch_right_lv.3":
+		$AttackAreaRight/CollisionShape2D.disabled=true
 		$AnimatedSprite.play(savedAni)
 		isAttacking=false
 

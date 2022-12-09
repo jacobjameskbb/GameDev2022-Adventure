@@ -108,4 +108,16 @@ position = Vector2( 240, 150 )
 
 [node name="MenuManager" type="Node2D" parent="."]
 
+[node name="worm" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1069.03, 415.049 )
+
+[node name="worm2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 270.033, 786.049 )
+
+[node name="worm3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -291.967, 722.049 )
+
+[node name="worm4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -292.967, 337.049 )
+
 [connection signal="animation_finished" from="WorldManager/BlackSplitLeft/AnimationPlayer" to="WorldManager" method="_on_AnimationPlayer_animation_finished"]

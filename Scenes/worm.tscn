@@ -6,14 +6,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "right",
 "speed": 5.0
 } ]
 
@@ -30,9 +30,7 @@ radius = 50.0
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 17.4674, 29.5488 )
 
-[node name="worm" type="KinematicBody2D" groups=[
-"Enemy",
-]]
+[node name="worm" type="KinematicBody2D" groups=["Enemy"]]
 position = Vector2( 54.0326, 32.0488 )
 script = ExtResource( 2 )
 
