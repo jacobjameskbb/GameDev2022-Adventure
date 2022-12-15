@@ -50,8 +50,10 @@ func _physics_process(delta):
 	if abs(direction.x) >= abs(direction.y):
 		if direction.x >= 0:
 			facing = 'right'
+			$AnimatedSprite.scale.x = -1
 		elif direction.x <= 0:
 			facing = 'left'
+			$AnimatedSprite.scale.x = 1
 			
 	elif abs(direction.x) <= abs(direction.y):
 		if direction.y >= 0:
